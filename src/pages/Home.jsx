@@ -16,7 +16,18 @@ export default function Home() {
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
-
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'EducationalOrganization',
+        name: 'Hospitality Disha',
+        url: 'https://hospitalitydisha.in',
+        logo: 'https://hospitalitydisha.in/logo.png',
+        description:
+          'Medical and healthcare college admission consultancy providing course selection, college comparison and admission guidance.',
+        sameAs: []
+      })}
+    </script>
   return (
     <div className="font-sans text-charcoal bg-bgLight relative">
       
