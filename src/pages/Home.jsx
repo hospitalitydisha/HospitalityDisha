@@ -24,7 +24,7 @@ export default function Home() {
         url: 'https://hospitalitydisha.in',
         logo: 'https://hospitalitydisha.in/logo.png',
         description:
-          'Medical and healthcare college admission consultancy providing course selection, college comparison and admission guidance.',
+          'Hospitality and healthcare college admission consultancy providing course selection, college comparison and admission guidance.',
         sameAs: []
       })}
     </script>
