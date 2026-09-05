@@ -52,26 +52,29 @@ export default function CollegesPage() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
             
             {/* Left Side: Course Category Buttons */}
-            <div className="w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
-                <GraduationCap className="h-4 w-4 text-[#DEB22F]" /> Select Program Level
-              </h3>
-              <div className="flex gap-2 min-w-max">
-                {categories.map(category => (
-                  <button
-                    key={category}
-                    onClick={() => setFilterCategory(category)}
-                    className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
-                      filterCategory === category 
-                        ? 'bg-navy text-white shadow-md' 
-                        : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
+            {/* Left Side: Course Category Buttons */}
+<div className="w-full lg:w-auto overflow-x-auto pb-2 lg:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+  <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+    <GraduationCap className="h-4 w-4 text-[#DEB22F]" />
+    Select Program Level
+  </h3>
+
+  <div className="flex gap-2 min-w-max">
+    {categories.map(category => (
+      <button
+        key={category}
+        onClick={() => setFilterCategory(category)}
+        className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+          filterCategory === category
+            ? 'bg-[#DEB22F] text-white shadow-md'
+            : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200'
+        }`}
+      >
+        {category}
+      </button>
+    ))}
+  </div>
+</div>
 
             {/* Right Side: Location Dropdown List */}
             <div className="w-full lg:w-64 shrink-0 border-t lg:border-t-0 lg:border-l border-gray-100 pt-6 lg:pt-0 lg:pl-8">

@@ -33,7 +33,7 @@ export default function Home() {
       
       {/* --- WHATSAPP FLOATING WIDGET --- */}
       <a
-        href="https://wa.me/910000000000" // Replace with your actual WhatsApp number
+        href="https://wa.me/916281570955" // Replace with your actual WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_8px_30px_rgb(37,211,102,0.4)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
