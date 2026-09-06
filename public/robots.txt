@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hospitalitydisha.in/sitemap.xml
+Sitemap: https://hospitalitydisha.com/sitemap.xml
