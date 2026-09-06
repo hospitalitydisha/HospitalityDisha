@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function AdmissionProcessPage() {
   const steps = [
     { num: '01', title: 'Understand Your Goals', desc: 'Discuss academic background, interests and career goals with our expert counsellors.' },
-    { num: '02', title: 'Shortlist Courses', desc: 'Identify suitable medical and healthcare programs tailored to your profile.' },
+    { num: '02', title: 'Shortlist Courses', desc: 'Identify suitable Hospitality and healthcare programs tailored to your profile.' },
     { num: '03', title: 'Explore Colleges', desc: 'Compare colleges, locations, fees, facilities and eligibility criteria.' },
     { num: '04', title: 'Application Guidance', desc: 'Understand applications, counselling procedures and gather required documents.' },
     { num: '05', title: 'Counselling & Choice Filling', desc: 'Get strategic guidance for applicable counselling rounds and preference selection.' },

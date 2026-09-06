@@ -42,7 +42,7 @@ return ( <div className="min-h-screen bg-bgLight py-16"> <div className="mx-auto
         </h1>
 
         <p className="mb-12 text-gray-600">
-          Have questions about medical admissions? Fill out the form or
+          Have questions about Hospitality admissions? Fill out the form or
           reach out to us directly. We are here to guide you.
         </p>
 
