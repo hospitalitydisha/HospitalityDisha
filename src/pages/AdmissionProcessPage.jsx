@@ -6,32 +6,32 @@ export default function AdmissionProcessPage() {
     {
       num: '01',
       title: 'Understand Your Goals',
-      desc: 'Discuss your academic background, interests, and career goals with our expert counsellors.',
+      desc: 'Tell us about your education, interests, career goals and preferred location.',
     },
     {
       num: '02',
-      title: 'Shortlist Courses',
-      desc: 'Identify suitable Hospitality and Healthcare programs tailored to your profile.',
+      title: 'Choose the Right Course & Program',
+      desc: 'Explore hospitality courses that match your interests, eligibility and career goals.',
     },
     {
       num: '03',
-      title: 'Explore Colleges',
-      desc: 'Compare colleges, locations, fees, facilities, and eligibility criteria.',
+      title: 'Find Your Right College',
+      desc: 'Compare colleges based on location, fees, eligibility, facilities and career opportunities.',
     },
     {
       num: '04',
-      title: 'Application Guidance',
-      desc: 'Understand applications, counselling procedures, and gather the required documents.',
+      title: 'Application Guidance ',
+      desc: 'Get help with applications, eligibility, documents, deadlines and the admission process.',
     },
     {
       num: '05',
-      title: 'Counselling & Choice Filling',
-      desc: 'Get strategic guidance for applicable counselling rounds and preference selection.',
+      title: 'Counselling & Admission',
+      desc: 'Get guidance on college selection, counselling procedures, preference filling and admission decisions.',
     },
     {
       num: '06',
-      title: 'Admission Support',
-      desc: 'Receive continuous assistance throughout the final admission and college reporting process.',
+      title: 'Admission & College Joining',
+      desc: 'Receive support through final admission, fee payment, documentation and college reporting.',
     },
   ];
 
@@ -227,7 +227,7 @@ export default function AdmissionProcessPage() {
             <div className="relative">
 
               <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-                Ready to Start Your Journey?
+                Get guidance. Build your future.
               </h2>
 
               <p className="mt-4 text-gray-300 max-w-xl mx-auto">
@@ -257,7 +257,7 @@ export default function AdmissionProcessPage() {
                   group
                 "
               >
-                Start Your Counselling
+                Get Free Counselling
 
                 <CheckCircle className="h-5 w-5" />
 

@@ -456,7 +456,7 @@ export const colleges = [
 
 
 export const testimonials = [
-  { id: 1, name: 'Rahul S.', course: 'B.Sc. HHA Student', text: 'Hospitality Disha made the complex NCHMCT counselling process so easy. Their expert guidance helped me secure a seat in my dream IHM.' },
+  { id: 1, name: 'Rahul S.', course: 'B.Sc. HHA Student', text: 'Hospitality Disha made counselling process so easy. Their expert guidance helped me secure a seat in my dream IHM.' },
   { id: 2, name: 'Priya K.', course: 'Culinary Arts Student', text: 'The personalized college comparison and application assistance gave my parents and me a lot of confidence during admission.' },
   { id: 3, name: 'Aman R.', course: 'BHM Student', text: 'Highly recommend their services! From course selection to the final admission step, they were supportive and transparent.' },
   { id: 4, name: 'Sneha M.', course: 'MBA Hospitality Student', text: 'I was confused about postgraduate specializations, but their career counselling clarified my goals. Very professional team.' }
