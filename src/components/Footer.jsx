@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           {/* Brand Section */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
+          <div className="space-y-0">
+            <div className="flex items-center gap-2">
 
               {/* Logo */}
               <div className="flex items-center justify-center">

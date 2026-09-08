@@ -16,7 +16,7 @@ export const courses = [
     fullName: 'B.Sc. in Hospitality & Hotel Administration', 
     duration: '3 Years', 
     eligibility: '12th Pass (Any Stream)', 
-    img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://media.istockphoto.com/id/1481129583/photo/hotel-employee-using-digital-tablet.webp?a=1&b=1&s=612x612&w=0&k=20&c=N18K42dXPTVPonNlxoJwoZUyTtM0bD80PgCJ_hWx9EQ=' 
   },
   { 
     id: 'deg-bhm', 
@@ -52,7 +52,7 @@ export const courses = [
     fullName: 'B.Voc in Hospitality & Tourism', 
     duration: '3 Years', 
     eligibility: '12th Pass (Any Stream)', 
-    img: 'https://images.unsplash.com/photo-1534430252516-ad074983fb9a?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://images.unsplash.com/photo-1504150558240-0b4fd8946624?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG9zcGl0YWxpdHklMjAlMjYlMjBUb3VyaXNtfGVufDB8fDB8fHww' 
   },
   { 
     id: 'deg-culinary', 
@@ -92,7 +92,7 @@ export const courses = [
     fullName: 'Diploma in Food Production', 
     duration: '1.5 Years', 
     eligibility: '10th / 12th Pass', 
-    img: 'https://images.unsplash.com/photo-1414235077428-338988a2e8c0?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://images.unsplash.com/photo-1762330018258-2cf9b8f80618?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fEZvb2QlMjBQcm9kdWN0aW9ufGVufDB8fDB8fHww=400' 
   },
   { 
     id: 'dip-bakery', 
@@ -119,7 +119,7 @@ export const courses = [
     fullName: 'Diploma in Housekeeping Operations', 
     duration: '1.5 Years', 
     eligibility: '10th / 12th Pass', 
-    img: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f4?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://images.unsplash.com/photo-1445991842772-097fea258e7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEhvdXNla2VlcGluZ3xlbnwwfHwwfHx8MA%3D%3D=400' 
   },
   { 
     id: 'dip-fb-service', 
@@ -186,7 +186,7 @@ export const courses = [
     fullName: 'Certificate in Housekeeping', 
     duration: '6 Months', 
     eligibility: '10th Pass', 
-    img: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f4?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://plus.unsplash.com/premium_photo-1681491802557-7ac580349fd4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAxfHxIb3VzZWtlZXBpbmd8ZW58MHx8MHx8fDA%3D=400' 
   },
   { 
     id: 'cert-fb', 
@@ -204,7 +204,7 @@ export const courses = [
     fullName: 'Craftsmanship Course in Culinary Skills', 
     duration: '6 - 12 Months', 
     eligibility: '10th Pass', 
-    img: 'https://images.unsplash.com/photo-1414235077428-338988a2e8c0?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://images.unsplash.com/photo-1653233797467-1a528819fd4f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fEN1bGluYXJ5fGVufDB8fDB8fHww=400' 
   },
 
   // ==========================================
@@ -254,7 +254,91 @@ export const courses = [
     duration: '1 - 1.5 Years', 
     eligibility: 'Graduation (Any Stream)', 
     img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=400' 
-  }
+  },
+    // ==========================================
+    // AVIATION & AIRPORT HOSPITALITY - DUMMY DATA
+    // ==========================================
+
+    { 
+      id: 'avi-diploma', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'Diploma in Aviation', 
+      fullName: 'Diploma in Aviation, Hospitality & Travel Management', 
+      duration: '1 - 2 Years', 
+      eligibility: '12th Pass (Any Stream)', 
+      img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=400' 
+    },
+
+    { 
+      id: 'avi-bba', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'BBA Aviation', 
+      fullName: "BBA / Bachelor's in Aviation Management", 
+      duration: '3 Years', 
+      eligibility: '12th Pass (Any Stream)', 
+      img: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80&w=400' 
+    },
+
+    { 
+      id: 'avi-ground-staff', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'Airport Ground Staff', 
+      fullName: 'Certificate in Airport Ground Staff', 
+      duration: '6 - 12 Months', 
+      eligibility: '10th / 12th Pass', 
+      img: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=400' 
+    },
+
+    { 
+      id: 'avi-customer-service', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'Airport Customer Service', 
+      fullName: 'Airport Customer Service', 
+      duration: '6 - 12 Months', 
+      eligibility: '10th / 12th Pass', 
+      img: 'https://images.unsplash.com/photo-1583330357508-1864f8e57785?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGFpcnBvcnR8ZW58MHx8MHx8fDA%3D=400' 
+    },
+
+    { 
+      id: 'avi-cabin-crew', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'Cabin Crew', 
+      fullName: 'Cabin Crew / Airline Hospitality', 
+      duration: '6 - 12 Months', 
+      eligibility: '12th Pass (Any Stream)', 
+      img: 'https://plus.unsplash.com/premium_photo-1661963148186-5411dad251e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2FiaW4lMjBDcmV3fGVufDB8fDB8fHww=400' 
+    },
+
+    { 
+      id: 'avi-travel-management', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'Aviation & Travel Management', 
+      fullName: 'Aviation & Travel Management', 
+      duration: '1 - 3 Years', 
+      eligibility: '12th Pass (Any Stream)', 
+      img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=400' 
+    },
+
+    { 
+      id: 'avi-ground-handling', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'Airport Ground Handling', 
+      fullName: 'Airport Ground Handling', 
+      duration: '6 - 12 Months', 
+      eligibility: '10th / 12th Pass', 
+      img: 'https://plus.unsplash.com/premium_photo-1661351490701-bc7e60ee4492?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QWlycG9ydCUyMEdyb3VuZCUyMHN0YWZmJTVEfGVufDB8fDB8fHww' 
+    },
+
+    { 
+      id: 'avi-airport-operations', 
+      category: 'Aviation & Airport Hospitality',
+      name: 'Airline & Airport Operations', 
+      fullName: 'Airline & Airport Operations', 
+      duration: '6 - 12 Months', 
+      eligibility: '12th Pass (Any Stream)', 
+      img: 'https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&q=80&w=400' 
+    },
+
 ];
 
 export const colleges = [
@@ -355,7 +439,7 @@ export const colleges = [
     intake: '120 (B.Sc. HHA)',
     categories: ['Degree Courses', 'Certificate Courses'],
     programs: ['B.Sc. HHA', 'Craft Certificate in Food Production'],
-    img: 'https://images.unsplash.com/photo-1414235077428-338988a2e8c0?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sbGVnZXxlbnwwfHwwfHx8MA%3D%3D=400' 
   },
   { 
     id: 10, 
@@ -366,7 +450,7 @@ export const colleges = [
     intake: 'Not Declared',
     categories: ['Degree Courses', 'Diploma Courses'],
     programs: ['Hotel Management Programs'],
-    img: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f4?auto=format&fit=crop&q=80&w=400' 
+    img: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D=400' 
   }
 ];
 

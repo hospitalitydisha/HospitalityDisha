@@ -51,14 +51,14 @@ export default function AdmissionProcessPage() {
             Admission Process
           </span>
 
-          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
             Your Admission Journey,
             <span className="block text-[#DEB22F] mt-2">
               Simplified
             </span>
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-5 text-lg md:text-l text-gray-500 max-w-2xl mx-auto leading-relaxed">
             We provide end-to-end assistance from course selection to
             your first day at college.
           </p>

@@ -151,7 +151,7 @@ export default function About() {
         {
           icon: BookOpen,
           title: 'End-to-End Assistance',
-          desc: 'We hold your hand through the entire journey: career counselling, shortlisting, NCHMCT guidance, document prep, and final admission.'
+          desc: 'We hold your hand through the entire journey: career counselling, shortlisting, document prep, and final admission.'
         }
       ].map((value, i) => (
         <div
