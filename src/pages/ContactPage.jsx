@@ -177,10 +177,10 @@ export default function ContactPage() {
                   </h4>
 
                   <a
-                    href="mailto:hospitalitydisha.in@gmail.com"
+                    href="mailto:hospitalitydisha.com@gmail.com"
                     className="text-gray-600 transition-colors hover:text-teal"
                   >
-                    hospitalitydisha.in@gmail.com
+                    hospitalitydisha.com@gmail.com
                   </a>
                 </div>
               </div>

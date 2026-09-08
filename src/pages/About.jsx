@@ -15,7 +15,7 @@ export default function About() {
     <div className="font-sans text-charcoal bg-white pt-24">
       
       {/* 1. HERO SECTION */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-0 md:py-0 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             
@@ -36,13 +36,11 @@ export default function About() {
               </p>
               
               <p className="text-gray-600 leading-relaxed">
-                Navigating NCHMCT scores, state counselling, and private college fee structures can be overwhelming for both students and parents. Our mission is to simplify this journey with 100% transparent, ethical, and personalized admission guidance.
+                Navigating to state counselling, and private college fee structures can be overwhelming for both students and parents. Our mission is to simplify this journey with 100% transparent, ethical, and personalized admission guidance.
               </p>
               
               <div className="pt-4">
-                <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-navy hover:bg-[#151515] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:-translate-y-1">
-                  Speak with an Expert
-                </Link>
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-[#DEB22F] hover:bg-[#c49b25] text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">Speak with an Expert</Link>
               </div>
             </div>
 
@@ -108,32 +106,127 @@ export default function About() {
         </div>
       </section>
 
-      {/* 3. CORE VALUES / WHY WE STAND OUT */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-sm font-bold text-[#DEB22F] uppercase tracking-widest">Our Core Values</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-navy tracking-tight">What Makes Hospitality Disha Different?</h3>
-            <p className="text-gray-600 text-lg">We don't just fill forms; we shape careers. Our methodology is built on trust, transparency, and a deep understanding of the hospitality industry.</p>
+{/* 3. CORE VALUES / WHY WE STAND OUT */}
+<section className="relative py-24 bg-[#0F172A] overflow-hidden">
+  
+  {/* Background Decorations */}
+  <div className="absolute top-0 left-0 w-72 h-72 bg-[#DEB22F]/10 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Section Heading */}
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      
+      <span className="inline-block text-[#DEB22F] text-sm font-bold uppercase tracking-[0.2em]">
+        Our Core Values
+      </span>
+
+      <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        What Makes Hospitality Disha Different?
+      </h2>
+
+      <div className="mx-auto mt-6 h-1 w-20 bg-[#DEB22F] rounded-full"></div>
+
+      <p className="mt-6 text-gray-300 text-base md:text-lg leading-relaxed">
+        We don't just fill forms; we shape careers. Our methodology is built
+        on trust, transparency, and a deep understanding of the hospitality industry.
+      </p>
+    </div>
+
+    {/* Core Value Cards */}
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {[
+        {
+          icon: Users,
+          title: 'Student-First Approach',
+          desc: 'Our college recommendations are based strictly on the student’s academic profile, career goals, and family budget. No hidden agendas.'
+        },
+        {
+          icon: ShieldCheck,
+          title: '100% Transparency',
+          desc: 'From tuition fees and hostel charges to placement statistics, we provide clear, verified information so parents can make confident decisions.'
+        },
+        {
+          icon: BookOpen,
+          title: 'End-to-End Assistance',
+          desc: 'We hold your hand through the entire journey: career counselling, shortlisting, NCHMCT guidance, document prep, and final admission.'
+        }
+      ].map((value, i) => (
+        <div
+          key={i}
+          className="
+            group
+            relative
+            bg-white
+            rounded-3xl
+            p-8
+            md:p-10
+            text-center
+            border
+            border-white/10
+            shadow-xl
+            hover:shadow-2xl
+            hover:-translate-y-2
+            transition-all
+            duration-500
+            overflow-hidden
+          "
+        >
+
+          {/* Gold Top Border */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-[#DEB22F] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
+
+          {/* Icon */}
+          <div className="
+            mx-auto
+            w-16
+            h-16
+            rounded-2xl
+            bg-[#DEB22F]/10
+            border
+            border-[#DEB22F]/20
+            flex
+            items-center
+            justify-center
+            mb-7
+            group-hover:bg-[#DEB22F]
+            group-hover:scale-110
+            transition-all
+            duration-500
+          ">
+            <value.icon
+              className="
+                h-8
+                w-8
+                text-[#DEB22F]
+                group-hover:text-black
+                transition-colors
+                duration-300
+              "
+            />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { icon: Users, title: 'Student-First Approach', desc: 'Our college recommendations are based strictly on the student’s academic profile, career goals, and family budget. No hidden agendas.' },
-              { icon: ShieldCheck, title: '100% Transparency', desc: 'From tuition fees and hostel charges to placement statistics, we provide clear, verified information so parents can make confident decisions.' },
-              { icon: BookOpen, title: 'End-to-End Assistance', desc: 'We hold your hand through the entire journey: career counselling, shortlisting, NCHMCT guidance, document prep, and final admission.' }
-            ].map((value, i) => (
-              <div key={i} className="text-center p-8 rounded-2xl bg-white border border-gray-100 hover:border-[#DEB22F]/50 hover:shadow-lg transition-all duration-300">
-                <div className="mx-auto w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-100">
-                  <value.icon className="text-[#DEB22F] h-8 w-8" />
-                </div>
-                <h4 className="text-xl font-bold text-navy mb-3">{value.title}</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Title */}
+          <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+            {value.title}
+          </h4>
+
+          {/* Description */}
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            {value.desc}
+          </p>
+
+          {/* Bottom Accent */}
+          <div className="mt-7 mx-auto h-1 w-10 bg-[#DEB22F] rounded-full group-hover:w-16 transition-all duration-500"></div>
+
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>
 
       {/* 4. THE HOSPITALITY ADVANTAGE (Checklist) */}
       <section className="py-20 bg-gray-50 border-t border-gray-100">

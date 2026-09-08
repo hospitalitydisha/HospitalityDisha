@@ -380,7 +380,6 @@ export const testimonials = [
 
 export const faqs = [
   { q: 'What courses does Hospitality Disha provide guidance for?', a: 'We provide guidance for B.Sc. HHA, BHM, BHMCT, Culinary Arts, BBA Hospitality, as well as various Diplomas and Postgraduate programs.' },
-  { q: 'Do you help with NCHMCT JEE counselling?', a: 'Yes, we provide comprehensive guidance related to NCHMCT-based admission processes, including choice filling and seat allocation.' },
   { q: 'Can you help me compare hotel management colleges?', a: 'Absolutely. We help students and parents compare colleges based on course availability, location, fee structures, facilities, and placement records.' },
   { q: 'Do you provide guidance to parents?', a: 'Yes, we believe parents are a crucial part of the process. We ensure clear communication regarding options, costs, and timelines.' },
   { q: 'Can I get guidance about college fees?', a: 'Yes, we provide approximate fee structures and help you understand the total cost of education across different private and government institutions.' },

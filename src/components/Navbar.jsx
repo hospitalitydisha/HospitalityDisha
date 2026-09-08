@@ -35,27 +35,41 @@ export default function Navbar() {
               <img
                 src={logo}
                 alt="Hospitality Disha Logo"
-                className="h-24 w-24 object-contain"
+                className="h-28 w-28 object-contain"
               />
             </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
+
             {links.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`${
+                className={`relative py-2 text-sm font-medium transition-colors group ${
                   isActive(link.path)
-                    ? 'text-teal font-semibold'
-                    : 'text-charcoal hover:text-teal'
-                } transition-colors text-sm font-medium`}
+                    ? 'text-[#DEB22F] font-semibold'
+                    : 'text-gray-700 hover:text-[#DEB22F]'
+                }`}
               >
                 {link.name}
+
+                {/* Active Underline */}
+                <span
+                  className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[3px] rounded-full bg-[#DEB22F] transition-all duration-300 ${
+                    isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                ></span>
+
+                {/* Active Circle */}
+                {isActive(link.path) && (
+                  <span className="absolute left-1/2 -translate-x-1/2 -bottom-[7px] w-2 h-2 bg-[#DEB22F] rounded-full border-2 border-white"></span>
+                )}
               </Link>
             ))}
 
+            {/* CTA */}
             <Link
               to="/contact"
               className="
@@ -73,13 +87,14 @@ export default function Navbar() {
             >
               Get Free Counselling
             </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-navy p-2"
+              className="text-gray-800 p-2"
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
@@ -103,13 +118,23 @@ export default function Navbar() {
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 text-sm font-medium transition-colors ${
+                  className={`relative mx-2 px-4 py-3 text-sm font-medium rounded-lg transition-all ${
                     isActive(link.path)
-                      ? 'text-teal bg-teal/5 font-semibold'
-                      : 'text-charcoal hover:text-teal hover:bg-gray-50'
+                      ? 'text-[#DEB22F] bg-[#DEB22F]/10 font-semibold'
+                      : 'text-gray-700 hover:text-[#DEB22F] hover:bg-gray-50'
                   }`}
                 >
-                  {link.name}
+                  <div className="flex items-center justify-between">
+                    <span>{link.name}</span>
+
+                    {/* Mobile Active Indicator */}
+                    {isActive(link.path) && (
+                      <span className="flex items-center gap-1">
+                        <span className="w-8 h-[3px] bg-[#DEB22F] rounded-full"></span>
+                        <span className="w-2 h-2 bg-[#DEB22F] rounded-full"></span>
+                      </span>
+                    )}
+                  </div>
                 </Link>
               ))}
 
@@ -144,4 +169,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
