@@ -342,118 +342,188 @@ export const courses = [
 ];
 
 export const colleges = [
-  { 
-    id: 1, 
-    name: 'AIMS Hotel Managehment Academy', 
-    city: 'Hyderabad', 
-    state: 'Telangana', 
-    type: 'Private', 
-    intake: '120 (BHMCT)',
-    categories: ['Degree Courses', 'Diploma Courses', 'Postgraduate'],
-    programs: ['BHMCT', 'Diploma in Hotel Management', 'PG Diploma'],
-    img: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=400' 
+  {
+    id: 1,
+    name: 'Blooms College of Hotel Management and Catering Technology',
+    city: 'Hyderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: '100',
+    categories: [
+      'Degree Courses',
+      'Diploma Courses',
+      'Postgraduate'
+    ],
+    programs: [
+      'BHMCT – Bachelor’s Degree in Hotel Management & Catering Technology',
+      'Bachelor’s Degree in Hotel Management – Affiliated to Acharya Nagarjuna University',
+      'Diploma in Food Production',
+      'PG Diploma in Hotel Management'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ9KTgbo7AWiz_LRTTMwrSxMiY1EEK_P_GX4N5aEGc-A&s=10'
   },
-  { 
-    id: 2, 
-    name: 'Institute of Hotel Management (IHM) Hyderabad', 
-    city: 'Hyderabad', 
-    state: 'Telangana', 
-    type: 'State / Central', 
-    intake: '285 (B.Sc. HHA)',
-    categories: ['Degree Courses', 'Postgraduate', 'Certificate Courses'],
-    programs: ['B.Sc. HHA', 'M.Sc. Hospitality Admin', 'PG Diploma Accommodation', 'Craft Certificate F&B'],
-    img: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80&w=400' 
-  },
-  { 
-    id: 3, 
-    name: 'Culinary Academy of India', 
-    city: 'Hyderabad', 
-    state: 'Telangana', 
-    type: 'Private', 
-    intake: '60 (BCT&CA)',
-    categories: ['Degree Courses', 'Postgraduate', 'Diploma Courses'],
-    programs: ['BCT&CA', 'PG Diploma in Culinary Arts', 'Advance Diploma in Culinary Arts'],
-    img: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400' 
-  },
-  { 
-    id: 4, 
-    name: 'Dr. YSR National Institute of Tourism & Hospitality', 
-    city: 'Hyderabad', 
-    state: 'Telangana', 
-    type: 'State / Central', 
-    intake: '120 (B.Sc. HHA)',
-    categories: ['Degree Courses'],
-    programs: ['B.Sc. HHA (Generic)'],
-    img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400' 
-  },
-  { 
-    id: 5, 
-    name: 'Roots College of Hotel Management & Culinary Arts', 
-    city: 'Hyderabad', 
-    state: 'Telangana', 
-    type: 'Private', 
-    intake: '100 (BHMCT), 100 (BCTCA)',
-    categories: ['Degree Courses', 'Diploma Courses'],
-    programs: ['BHMCT', 'BCT&CA', 'Diploma in Culinary Arts', 'Diploma in Travel & Tourism'],
-    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400' 
-  },
-  { 
-    id: 6, 
-    name: 'Global College of Hotel Management', 
-    city: 'Warangal', 
-    state: 'Telangana', 
-    type: 'Private', 
-    intake: 'Not Declared',
-    categories: ['Degree Courses', 'Diploma Courses'],
-    programs: ['BHM&CT', 'Advance Diploma in Hotel Management'],
-    img: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=400' 
-  },
-  { 
-    id: 7, 
-    name: 'Indian Institute of Hotel Management & Culinary Arts', 
-    city: 'Hyderabad', 
-    state: 'Telangana', 
-    type: 'Private', 
-    intake: '120 (BHMCT), 100 (BCTCA)',
-    categories: ['Degree Courses', 'Certificate Courses'],
-    programs: ['BHMCT', 'BCT&CA', 'Certificate in Food Production & Patisserie'],
-    img: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&q=80&w=400' 
-  },
-  { 
-    id: 8, 
-    name: 'Telangana State Institute of Hotel Management', 
-    city: 'Sangareddy', 
-    state: 'Telangana', 
-    type: 'State / Central', 
-    intake: '60 (B.Sc. HHA)',
-    categories: ['Degree Courses', 'Certificate Courses'],
-    programs: ['B.Sc. HHA', 'Craft Certificate in Food Production & Patisserie'],
-    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=400' 
-  },
-  { 
-    id: 9, 
-    name: 'Shri Shakti Institute of Hotel Management', 
-    city: 'Hyderabad', 
-    state: 'Telangana', 
-    type: 'State / Central', 
-    intake: '120 (B.Sc. HHA)',
-    categories: ['Degree Courses', 'Certificate Courses'],
-    programs: ['B.Sc. HHA', 'Craft Certificate in Food Production'],
-    img: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sbGVnZXxlbnwwfHwwfHx8MA%3D%3D=400' 
-  },
-  { 
-    id: 10, 
-    name: 'Karimnagar College of Hotel Management', 
-    city: 'Karimnagar', 
-    state: 'Telangana', 
-    type: 'Private', 
-    intake: 'Not Declared',
-    categories: ['Degree Courses', 'Diploma Courses'],
-    programs: ['Hotel Management Programs'],
-    img: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D=400' 
-  }
-];
 
+  {
+    id: 2,
+    name: 'Dr. Narayana Degree College of Hotel Management',
+    city: 'Secunderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: '100',
+    categories: [
+      'Degree Courses'
+    ],
+    programs: [
+      'Bachelor’s Degree in Hotel Management & Catering Technology (BHMCT)'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1CUXLL8XYMOsU24sVDGBMdrsIeC50HA3iwryS2bZpPQ&s=10'
+  },
+
+  {
+    id: 3,
+    name: 'Global Institute of Hotel Management',
+    city: 'Hyderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: '100',
+    categories: [
+      'Degree Courses',
+      'Certificate Courses'
+    ],
+    programs: [
+      'Bachelor’s Degree in Hotel Management & Catering Technology (BHMCT)',
+      'Craft Course in Food Production',
+      'Certificate Course in Food & Beverage Service'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMeChVELjmBRQI2FIq6rY1u3CZzlq5LHvfoC9LGKZegw&s'
+  },
+
+  {
+    id: 4,
+    name: 'LEO Academy of Hospitality and Tourism Management (LAHTM)',
+    city: 'Hyderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: '80',
+    categories: [
+      'Degree Courses',
+      'Certificate Courses',
+      'Vocational Courses'
+    ],
+    programs: [
+      'BHMCT – Bachelor’s Degree in Hotel Management & Catering Technology',
+      'Intermediate Course (Vocational) in Tourism and Hospitality Management',
+      'Craft Course in Food Production'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp_LVesuEw6wIuTQG5LM_FhxhSNSCjzFZaZaDQlP-fAQ&s'
+  },
+
+  {
+    id: 5,
+    name: 'SUN International Institute for Tourism & Management',
+    city: 'Hyderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: '100',
+    categories: [
+      'Degree Courses',
+      'Diploma Courses',
+      'Postgraduate',
+      'Management Courses'
+    ],
+    programs: [
+      'BHMCT – Bachelor’s Degree in Hotel Management & Catering Technology',
+      'MBA – Master of Business Administration',
+      'BBA – Bachelor of Business Administration',
+      'BBA Travel & Tourism',
+      'B.Sc. Food & Nutrition',
+      'DHM – Diploma in Hotel Management & Catering Technology',
+      'MBA Hotel Management & Tourism (MBA-HM)',
+      'PGDHM – Post Graduate Diploma in Hotel Management',
+      '4-Year Integrated Programme',
+      '5-Year Integrated Course in Hotel Management',
+      'Diploma in Culinary Arts'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv78b8ehQ8umjyc54ExbYN2Dj-FFGMiIsi94nWD9sA-A&s=10'
+  },
+
+  {
+    id: 6,
+    name: 'Trinity College of Hotel Management',
+    city: 'Secunderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: 'Not Declared',
+    categories: [
+      'Degree Courses',
+      'Diploma Courses',
+      'Postgraduate'
+    ],
+    programs: [
+      'Bachelor Degree in Hotel Management & Catering Technology (BHMCT)',
+      'Diploma in Food Production',
+      'Post Graduate Diploma in Hotel Management'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0cgEpC2Y-fHg28x0QSv1hUZfghwOpdaDyhtjYe7nMAw&s'
+  },
+
+  {
+    id: 7,
+    name: 'Vainavi College of Hotel Management',
+    city: 'Hyderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: '100 (BHMCT)',
+    categories: [
+      'Degree Courses',
+      'Diploma Courses',
+      'Postgraduate'
+    ],
+    programs: [
+      'Bachelor Degree in Hotel Management & Catering Technology (BHMCT)',
+      'Diploma in Food Production',
+      'Post Graduate Diploma in Hotel Management'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Y_QT0cl9DhtSyOcdrDar0QpG05VS6lqHEfqqjecJHA&s=10'
+  },
+
+  {
+    id: 8,
+    name: 'Pioneer Institute of Hotel Management',
+    city: 'Hyderabad',
+    state: 'Telangana',
+    type: 'Private',
+    intake: '100 (BHMCT)',
+    categories: [
+      'Degree Courses',
+      'Diploma Courses',
+      'Postgraduate',
+      'Certificate Courses'
+    ],
+    programs: [
+      'BHMCT – Bachelor’s Degree in Hotel Management & Catering Technology',
+      'Craft Certificate Course in Food Production',
+      'Diploma in Food Production',
+      'PG Diploma in Hotel Management'
+    ],
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9H6xdf1qucw41mvCzISesTxr30dMYtfhle4lIWRMOcw&s=10'
+  },
+  {
+  id: 9,
+  name: 'Sunshine Institute of Hotel Management',
+  city: 'Hyderabad',
+  state: 'Telangana',
+  type: 'Private',
+  intake: '100',
+  categories: [
+    'Diploma Courses'
+  ],
+  programs: [
+    'Diploma in Hotel Management'
+  ],
+  img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSpTl2p5FIihy8Z506cRT11o9uioOUO6rge4jPS-JoeA&s=10'
+}
+];
 
 export const testimonials = [
   { id: 1, name: 'Rahul S.', course: 'B.Sc. HHA Student', text: 'Hospitality Disha made counselling process so easy. Their expert guidance helped me secure a seat in my dream IHM.' },

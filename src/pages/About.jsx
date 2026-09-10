@@ -9,11 +9,30 @@ import {
   BookOpen, 
   CheckCircle2 
 } from 'lucide-react';
+import { Helmet } from "react-helmet-async";
+
 
 export default function About() {
   return (
+    
     <div className="font-sans text-charcoal bg-white pt-24">
-      
+<Helmet>
+  <title>
+    About Hospitality Disha | Hospitality College Admission Guidance
+  </title>
+
+  <meta
+    name="description"
+    content="Learn about Hospitality Disha and our personalised hospitality college admission guidance, course selection, college comparison and counselling for students and parents."
+  />
+
+  <link
+    rel="canonical"
+    href="https://www.hospitalitydisha.com/about"
+  />
+</Helmet>
+
+      <div className="font-sans text-charcoal bg-white pt-24"></div>
       {/* 1. HERO SECTION */}
       <section className="py-0 md:py-0 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
