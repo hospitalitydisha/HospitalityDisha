@@ -360,7 +360,7 @@ export const colleges = [
       'Diploma in Food Production',
       'PG Diploma in Hotel Management'
     ],
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ9KTgbo7AWiz_LRTTMwrSxMiY1EEK_P_GX4N5aEGc-A&s=10'
+    img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQkKw3DAG5e9McVveNs7S-2OGQYI9UgWRTW85Z2xMofrINjp_y'
   },
 
   {
