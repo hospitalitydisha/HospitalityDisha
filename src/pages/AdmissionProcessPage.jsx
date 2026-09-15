@@ -4,38 +4,38 @@ import { Helmet } from 'react-helmet-async';
 
 export default function AdmissionProcessPage() {
 
-  const steps = [
-    {
-      num: '01',
-      title: 'Understand Your Goals',
-      desc: 'Tell us about your education, interests, career goals and preferred location.',
-    },
-    {
-      num: '02',
-      title: 'Shortlist Courses',
-      desc: 'Identify suitable Hospitality and Healthcare programs tailored to your profile.',
-    },
-    {
-      num: '03',
-      title: 'Explore Colleges',
-      desc: 'Compare colleges, locations, fees, facilities, and eligibility criteria.',
-    },
-    {
-      num: '04',
-      title: 'Application Guidance',
-      desc: 'Understand applications, counselling procedures, and gather the required documents.',
-    },
-    {
-      num: '05',
-      title: 'Counselling & Choice Filling',
-      desc: 'Get strategic guidance for applicable counselling rounds and preference selection.',
-    },
-    {
-      num: '06',
-      title: 'Admission Support',
-      desc: 'Receive continuous assistance throughout the final admission and college reporting process.',
-    },
-  ];
+const steps = [
+  {
+    num: '01',
+    title: 'Understand Your Goals',
+    desc: 'Tell us about your education, interests, career goals and preferred location.',
+  },
+  {
+    num: '02',
+    title: 'Choose the Right Course',
+    desc: 'Explore hospitality courses that match your interests, eligibility and career goals.',
+  },
+  {
+    num: '03',
+    title: 'Find Your Right College',
+    desc: 'Compare colleges based on location, fees, eligibility, facilities and career opportunities.',
+  },
+  {
+    num: '04',
+    title: 'Application Guidance',
+    desc: 'Get help with applications, eligibility, documents, deadlines and the admission process.',
+  },
+  {
+    num: '05',
+    title: 'Counselling & Admission',
+    desc: 'Get guidance on college selection, counselling procedures, preference filling and admission decisions.',
+  },
+  {
+    num: '06',
+    title: 'Admission & College Joining',
+    desc: 'Receive support through final admission, fee payment, documentation and college reporting.',
+  },
+];
 
   return (
     <>
