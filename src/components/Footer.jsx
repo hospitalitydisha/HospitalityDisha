@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { FaYoutube, FaInstagram } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 
 export default function Footer() {
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           {/* Brand Section */}
-          <div className="space-y-0">
+          <div className="space-y-4">
             <div className="flex items-center gap-2">
 
               {/* Logo */}
@@ -33,6 +34,33 @@ export default function Footer() {
               Your Complete Career Guide to the Hospitality Industry.
               Trusted Guidance for Your Professional Education Journey.
             </p>
+
+            {/* Social Media */}
+            <div className="flex items-center gap-4 pt-2">
+
+              {/* YouTube */}
+              <a
+                href="https://www.youtube.com/@hospitalitydisha"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Hospitality Disha on YouTube"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:text-white hover:bg-[#DEB22F] hover:border-[#DEB22F] transition-all duration-300"
+              >
+                <FaYoutube className="w-5 h-5" />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/hospitalitydisha/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Hospitality Disha on Instagram"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 text-gray-400 hover:text-white hover:bg-[#DEB22F] hover:border-[#DEB22F] transition-all duration-300"
+              >
+                <FaInstagram className="w-5 h-5" />
+              </a>
+
+            </div>
           </div>
 
           {/* Company Links */}
