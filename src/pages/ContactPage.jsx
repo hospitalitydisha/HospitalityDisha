@@ -465,7 +465,7 @@ export default function ContactPage() {
 
                 {/* WHATSAPP */}
                 <a
-                  href="https://wa.me/916281570955"
+                  href="https://wa.me/916281570955?text=Hello%20HospitalityDisha%2C%20I%20would%20like%20to%20know%20more%20about%20your%20hospitality%20courses%2C%20career%20opportunities%2C%20and%20admissions.%20Please%20share%20more%20details."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-300 hover:scale-110"

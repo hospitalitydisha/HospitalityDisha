@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { testimonials, faqs } from '../data/mockData';
 import {
   CheckCircle2,
@@ -6,30 +6,124 @@ import {
   ShieldCheck,
   ArrowRight,
   Star,
-  Quote
+  Quote,
+  X 
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [showPromoModal, setShowPromoModal] = useState(false);
+  const navigate = useNavigate();
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
-  <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'EducationalOrganization',
-      name: 'Hospitality Disha',
-      url: 'https://hospitalitydisha.in',
-      logo: 'https://hospitalitydisha.in/logo.png',
-      description:
-        'Hospitality and healthcare college admission consultancy providing course selection, college comparison and admission guidance.',
-      sameAs: []
-    })}
-  </script>
+
+  // Show the promotional modal 1.5 seconds after the page loads
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPromoModal(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const featuredCourses = [
+    { name: 'B.Sc. HHA', desc: 'Hospitality Administration', img: 'https://plus.unsplash.com/premium_photo-1682089297123-85459da8036b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D' },
+    { name: 'BHMCT', desc: 'Hotel Management Tech', img: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400' },
+    { name: 'Culinary Arts', desc: 'Bachelor / Diploma', img: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&q=80&w=400' },
+    { name: 'Aviation Mgmt', desc: 'BBA / Diploma', img: 'https://images.unsplash.com/photo-1764916125225-7ccce5ae7310?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D' },
+    { name: 'MBA Hospitality', desc: 'Postgraduate Program', img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400' },
+    { name: 'Cabin Crew', desc: 'Airline Hospitality', img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=400' }
+  ];
+
   return (
     <div className="font-sans text-charcoal bg-bgLight relative">
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'EducationalOrganization',
+          name: 'Hospitality Disha',
+          url: 'https://hospitalitydisha.in',
+          logo: 'https://hospitalitydisha.in/logo.png',
+          description:
+            'Hospitality and healthcare college admission consultancy providing course selection, college comparison and admission guidance.',
+          sameAs: []
+        })}
+      </script>
+
+      <style>{`
+        @keyframes infiniteScroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.333333%); }
+        }
+        .animate-infinite-scroll {
+          animation: infiniteScroll 30s linear infinite;
+          width: max-content;
+        }
+        .animate-infinite-scroll:hover {
+          animation-play-state: paused;
+        }
+        @keyframes modalFadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .animate-modal {
+          animation: modalFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
+
+      {/* --- PROMOTIONAL SCHOLARSHIP MODAL --- */}
+      {showPromoModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity">
+          <div className="animate-modal relative w-full max-w-2xl bg-[#0a1930] rounded-2xl border-2 border-[#DEB22F] shadow-2xl overflow-hidden flex flex-col sm:flex-row min-h-[360px]">
+            
+            {/* Background Image (Aligned to right) */}
+            <div 
+              className="absolute inset-0 z-0 sm:left-1/4"
+              style={{
+                backgroundImage: 'url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop")',
+                backgroundPosition: 'right center',
+                backgroundSize: 'cover'
+              }}
+            >
+              {/* Smooth gradient transition from solid navy on the left to transparent on the right */}
+              <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#0a1930] via-[#0a1930]/90 to-transparent"></div>
+            </div>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPromoModal(false)}
+              className="absolute top-4 right-4 z-20 bg-white hover:bg-gray-100 text-[#0a1930] rounded-full p-1 shadow-lg transition-transform hover:scale-110"
+              aria-label="Close promotion"
+            >
+              <X className="h-6 w-6 font-bold" />
+            </button>
+
+            {/* Modal Content - Left side */}
+            <div className="relative z-10 p-8 sm:p-10 w-full flex flex-col justify-center">
+              <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-6">
+                <span className="text-[#DEB22F]">Get 30%<br/> Scholarship</span> <span className="text-white">on first<br/> semester fee</span>
+              </h2>
+
+              <Link
+                to="/contact"
+                onClick={() => setShowPromoModal(false)}
+                className="w-max bg-[#DEB22F] hover:bg-[#c49b25] text-[#0a1930] px-8 py-3 rounded-lg font-bold text-lg transition-transform hover:scale-105 shadow-lg mb-6"
+              >
+                Apply Now
+              </Link>
+
+              {/* Footer text extending across the bottom */}
+              <div className="mt-auto pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-end w-full">
+                <p className="text-white text-sm font-medium drop-shadow-md mb-2 sm:mb-0">Admissions Open for Jan'27 Session</p>
+                <p className="text-white/90 text-xs drop-shadow-md sm:absolute sm:bottom-6 sm:right-8">*T&C Apply</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      )}
 
       {/* --- WHATSAPP FLOATING WIDGET --- */}
       <a
@@ -46,8 +140,6 @@ export default function Home() {
 
       {/* 1. DARK HERO SECTION WITH HIGH-VISIBILITY HOTEL BACKGROUND */}
       <section className="relative overflow-hidden pt-32 pb-40 lg:pt-40 lg:pb-48">
-
-        {/* Luxury Hotel Background Image */}
         <div
           className="absolute inset-0 w-full h-full"
           style={{
@@ -57,34 +149,25 @@ export default function Home() {
             backgroundRepeat: 'no-repeat'
           }}
         ></div>
-
-        {/* Simple Dark Overlay (75% opacity black) - ensures text is readable but image shows through clearly */}
         <div className="absolute inset-0 bg-black/75 z-0"></div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-
-          {/* Top Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-gray-200 text-sm font-semibold mb-10 shadow-lg">
             Complete Career Guide
           </div>
-
-          {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
             Build Your <span className="text-[#DEB22F]">Career in <br className="hidden md:block" /> Hospitality?</span>
           </h1>
-
-          {/* Subheading */}
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-12 drop-shadow-md">
             Explore industry-recognized courses, top hospitality colleges, and diverse career pathways designed to help you succeed in the dynamic world of hospitality, tourism, hotels, and international opportunities
           </p>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-5">
             <Link
               to="/colleges"
               className="flex items-center justify-center gap-2 bg-[#DEB22F] hover:bg-[#c49b25] text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-[#DEB22F]/20"
             >
-              Explore  Colleges <ArrowRight className="h-5 w-5" />
+              Explore Colleges <ArrowRight className="h-5 w-5" />
             </Link>
             <Link
               to="/courses"
@@ -97,272 +180,146 @@ export default function Home() {
       </section>
 
       {/* START YOUR HOSPITALITY JOURNEY */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="text-[#DEB22F] font-semibold uppercase tracking-wider">
+              Start Your Journey
+            </span>
+            <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              Start Your Hospitality Journey
+            </h2>
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+              Everything you need to begin and grow your career in the hospitality industry.
+            </p>
+            <div className="mt-8 h-1 w-24 bg-[#DEB22F] rounded-full mx-auto"></div>
+          </div>
 
-    {/* Section Heading */}
-    <div className="text-center max-w-3xl mx-auto">
-      <span className="text-[#DEB22F] font-semibold uppercase tracking-wider">
-        Start Your Journey
-      </span>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">Courses</h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">Find the right hospitality course.</p>
+              <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
+            </div>
+            <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">Colleges</h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">Explore hospitality colleges.</p>
+              <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
+            </div>
+            <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">Jobs</h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">Discover hospitality career opportunities.</p>
+              <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
+            </div>
+            <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">International Careers</h3>
+              <p className="mt-3 text-gray-600 leading-relaxed">Explore opportunities abroad.</p>
+              <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-        Start Your Hospitality Journey
-      </h2>
+      {/* --- FEATURED PROGRAMS AUTO-SCROLLING CAROUSEL --- */}
+      <section className="bg-navy py-16 border-y border-gray-800 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-end mb-10">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-2">Featured Programs</h2>
+              <p className="text-gray-400">Discover our top-rated academic routes.</p>
+            </div>
+            <Link to="/courses" className="hidden md:flex items-center text-[#DEB22F] hover:text-white transition-colors font-bold text-sm">
+              View All Courses <ArrowRight className="h-4 w-4 ml-1" />
+            </Link>
+          </div>
+        </div>
 
-      <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-        Everything you need to begin and grow your career in the hospitality industry.
-      </p>
+        {/* Infinite Auto-Scroll Container */}
+        <div className="relative w-full overflow-hidden flex group">
+          <div className="animate-infinite-scroll flex gap-6 px-3">
+            {[...featuredCourses, ...featuredCourses, ...featuredCourses].map((course, idx) => (
+              <button
+                key={idx}
+                onClick={() => navigate('/courses')}
+                className="shrink-0 w-64 bg-white rounded-xl overflow-hidden border-2 border-transparent hover:border-[#DEB22F] transition-all duration-300 text-left shadow-lg hover:-translate-y-2 focus:outline-none"
+              >
+                <div className="h-40 overflow-hidden relative">
+                  <img src={course.img} alt={course.name} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div className="p-5 bg-white text-black h-full border-t-4 border-[#DEB22F]">
+                  <h4 className="text-xl font-extrabold text-black mb-1">{course.name}</h4>
+                  <p className="text-sm text-gray-700 font-semibold">{course.desc}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
 
-      <div className="mt-8 h-1 w-24 bg-[#DEB22F] rounded-full mx-auto"></div>
-    </div>
-
-    {/* 4 Cards */}
-    <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      {/* Courses */}
-      <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">
-          Courses
-        </h3>
-
-        <p className="mt-3 text-gray-600 leading-relaxed">
-          Find the right hospitality course.
-        </p>
-
-        <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
-      </div>
-
-      {/* Colleges */}
-      <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">
-          Colleges
-        </h3>
-
-        <p className="mt-3 text-gray-600 leading-relaxed">
-          Explore hospitality colleges.
-        </p>
-
-        <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
-      </div>
-
-      {/* Jobs */}
-      <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">
-          Jobs
-        </h3>
-
-        <p className="mt-3 text-gray-600 leading-relaxed">
-          Discover hospitality career opportunities.
-        </p>
-
-        <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
-      </div>
-
-      {/* International Careers */}
-      <div className="group bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#DEB22F] transition-colors">
-          International Careers
-        </h3>
-
-        <p className="mt-3 text-gray-600 leading-relaxed">
-          Explore opportunities abroad.
-        </p>
-
-        <div className="mt-6 h-1 w-12 bg-[#DEB22F] rounded-full group-hover:w-20 transition-all duration-300"></div>
-      </div>
-
-    </div>
-  </div>
-</section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link to="/courses" className="md:hidden flex items-center justify-center text-[#DEB22F] hover:text-white transition-colors font-bold text-sm mt-8">
+            View All Courses <ArrowRight className="h-4 w-4 ml-1" />
+          </Link>
+        </div>
+      </section>
 
       {/* 3. WHY CHOOSE THIS FIELD */}
       <section className="relative py-24 md:py-28 bg-[#101828] overflow-hidden">
-
-        {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="/images/hospitality-bg.jpg"
             alt=""
             className="w-full h-full object-cover opacity-20"
           />
-
-          {/* Dark overlay */}
           <div className="absolute inset-0 bg-[#101828]/85"></div>
         </div>
-
-        {/* Decorative background glow */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#DEB22F]/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#DEB22F]/5 rounded-full blur-3xl"></div>
 
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Section Heading */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-
             <p className="text-[#DEB22F] text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-4">
               Why Choose Us
             </p>
-
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight drop-shadow-lg">
               Why Choose a Career in{" "}
-              <span className="text-[#DEB22F]">
-                Hospitality?
-              </span>
+              <span className="text-[#DEB22F]">Hospitality?</span>
             </h2>
-
             <p className="mt-6 text-gray-300 text-base md:text-lg leading-relaxed">
-              A rewarding industry with global opportunities, career growth,
-              and diverse career paths.
+              A rewarding industry with global opportunities, career growth, and diverse career paths.
             </p>
-
           </div>
 
-
-          {/* Feature Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-
             {[
-              {
-                title: "Global Opportunities",
-                desc: "Work in luxury hotels, cruise lines, airlines, and premium resorts anywhere in the world."
-              },
-              {
-                title: "Rapid Career Growth",
-                desc: "The hospitality sector promotes based on performance, allowing for rapid advancement to management roles."
-              },
-              {
-                title: "Diverse Career Paths",
-                desc: "Explore culinary arts, event management, human resources, and revenue management."
-              },
-              {
-                title: "Lucrative Salaries",
-                desc: "Premium brands offer excellent compensation packages, international postings, and living allowances."
-              },
-              {
-                title: "Dynamic Environment",
-                desc: "Escape the 9-to-5 desk job. Every day brings new challenges, people, and experiences."
-              },
-              {
-                title: "Transferable Skills",
-                desc: "Develop exceptional communication, leadership, and crisis management skills valued in any industry."
-              }
+              { title: "Global Opportunities", desc: "Work in luxury hotels, cruise lines, airlines, and premium resorts anywhere in the world." },
+              { title: "Rapid Career Growth", desc: "The hospitality sector promotes based on performance, allowing for rapid advancement to management roles." },
+              { title: "Diverse Career Paths", desc: "Explore culinary arts, event management, human resources, and revenue management." },
+              { title: "Lucrative Salaries", desc: "Premium brands offer excellent compensation packages, international postings, and living allowances." },
+              { title: "Dynamic Environment", desc: "Escape the 9-to-5 desk job. Every day brings new challenges, people, and experiences." },
+              { title: "Transferable Skills", desc: "Develop exceptional communication, leadership, and crisis management skills valued in any industry." }
             ].map((item, i) => (
-
-              <div
-                key={i}
-                className="
-            group
-            relative
-            bg-white
-            rounded-2xl
-            p-7
-            md:p-8
-            border
-            border-gray-100
-            shadow-lg
-            hover:shadow-2xl
-            hover:-translate-y-2
-            transition-all
-            duration-300
-            overflow-hidden
-          "
-              >
-
-                {/* Gold top border */}
-                <div
-                  className="
-              absolute
-              top-0
-              left-0
-              w-full
-              h-1
-              bg-[#DEB22F]
-              scale-x-0
-              origin-left
-              group-hover:scale-x-100
-              transition-transform
-              duration-500
-            "
-                ></div>
-
-
-                {/* Number */}
+              <div key={i} className="group relative bg-white rounded-2xl p-7 md:p-8 border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#DEB22F] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"></div>
                 <div className="mb-6">
-
-                  <span
-                    className="
-                inline-flex
-                items-center
-                justify-center
-                w-10
-                h-10
-                rounded-full
-                bg-[#101828]
-                text-[#DEB22F]
-                font-bold
-                text-sm
-                group-hover:bg-[#DEB22F]
-                group-hover:text-[#101828]
-                transition-colors
-                duration-300
-              "
-                  >
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#101828] text-[#DEB22F] font-bold text-sm group-hover:bg-[#DEB22F] group-hover:text-[#101828] transition-colors duration-300">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-
                 </div>
-
-
-                {/* Title */}
-                <h3
-                  className="
-              text-xl
-              md:text-2xl
-              font-bold
-              text-[#101828]
-              mb-4
-              group-hover:text-[#DEB22F]
-              transition-colors
-              duration-300
-            "
-                >
+                <h3 className="text-xl md:text-2xl font-bold text-[#101828] mb-4 group-hover:text-[#DEB22F] transition-colors duration-300">
                   {item.title}
                 </h3>
-
-
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-                  {item.desc}
-                </p>
-
-
-                {/* Bottom accent */}
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">{item.desc}</p>
                 <div className="mt-7 w-10 h-0.5 bg-[#DEB22F] group-hover:w-16 transition-all duration-300"></div>
-
               </div>
-
             ))}
-
           </div>
 
-
-{/* Bottom Message */}
-<div className="mt-12 text-center">
-  <p className="text-white text-lg md:text-xl font-semibold">
-    Your journey to a successful hospitality career starts here.
-  </p>
-
-  <div className="mt-3 mx-auto h-1 w-12 bg-[#DEB22F] rounded-full"></div>
-</div>
-
+          <div className="mt-12 text-center">
+            <p className="text-white text-lg md:text-xl font-semibold">Your journey to a successful hospitality career starts here.</p>
+            <div className="mt-3 mx-auto h-1 w-12 bg-[#DEB22F] rounded-full"></div>
+          </div>
         </div>
       </section>
-
-
-
-
 
       {/* 4. SERVICES / HOW WE HELP PARENTS */}
       <section className="py-24 bg-white border-y border-gray-100">
@@ -371,7 +328,6 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute inset-0 bg-[#DEB22F] rounded-3xl opacity-20 transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 duration-300"></div>
               <img src="https://plus.unsplash.com/premium_photo-1682092170538-9ebcb3a09ac1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNoZWYlMjBlZHVjYXRpb258ZW58MHx8MHx8fDA%3D" alt="Counselling Session" className="relative rounded-3xl shadow-xl object-cover h-[500px] w-full" />
-
               <div className="absolute -bottom-6 -left-6 bg-[#151515] text-white p-6 rounded-2xl shadow-xl flex items-center gap-4">
                 <ShieldCheck className="h-10 w-10 text-[#DEB22F]" />
                 <div>
@@ -380,7 +336,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             <div className="space-y-8 lg:pl-8">
               <div>
                 <h2 className="text-sm font-bold text-[#DEB22F] uppercase tracking-widest mb-3">Making the Right College Choice Easier</h2>
@@ -389,16 +344,8 @@ export default function Home() {
                   Choosing the right hospitality college can be confusing. Hospitality Disha helps students and parents compare courses, colleges, fees, eligibility and admission options with confidence.
                 </p>
               </div>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  'Course & College Guidance',
-                  'College Comparison',
-                  'Fee & Eligibility Guidance',
-                  'Admission Process Support',
-                  'Documentation Guidance',
-                  'Personal Counselling'
-                ].map((feature, i) => (
+                {['Course & College Guidance', 'College Comparison', 'Fee & Eligibility Guidance', 'Admission Process Support', 'Documentation Guidance', 'Personal Counselling'].map((feature, i) => (
                   <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-bgLight border border-gray-100 hover:border-[#DEB22F]/40 transition-colors">
                     <div className="bg-white p-1.5 rounded-full shadow-sm">
                       <CheckCircle2 className="text-[#DEB22F] h-5 w-5" />
@@ -419,24 +366,18 @@ export default function Home() {
             <h2 className="text-sm font-bold text-[#DEB22F] uppercase tracking-widest">Student Stories</h2>
             <h3 className="text-3xl md:text-4xl font-extrabold text-navy tracking-tight">What Our Students Say</h3>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((t) => (
               <div key={t.id} className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 relative group hover:-translate-y-1 transition-all duration-300">
                 <Quote className="h-10 w-10 text-gray-100 absolute top-6 right-6 group-hover:text-[#DEB22F]/20 transition-colors duration-300" />
-
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-[#DEB22F] text-[#DEB22F]" />
                   ))}
                 </div>
-
                 <p className="text-gray-600 text-sm mb-8 leading-relaxed relative z-10">"{t.text}"</p>
-
                 <div className="flex items-center gap-4 border-t border-gray-50 pt-6">
-                  <div className="h-10 w-10 rounded-full bg-navy/5 flex items-center justify-center font-bold text-navy">
-                    {t.name.charAt(0)}
-                  </div>
+                  <div className="h-10 w-10 rounded-full bg-navy/5 flex items-center justify-center font-bold text-navy">{t.name.charAt(0)}</div>
                   <div>
                     <h4 className="font-bold text-navy text-sm">{t.name}</h4>
                     <p className="text-xs text-gray-500 font-medium">{t.course}</p>
@@ -454,32 +395,17 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-navy tracking-tight">Frequently Asked Questions</h2>
           </div>
-
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className={`border rounded-2xl transition-all duration-300 ${openFaq === i ? 'border-[#DEB22F] bg-[#DEB22F]/5 shadow-md' : 'border-gray-200 bg-white hover:border-gray-300'
-                  }`}
-              >
-                <button
-                  onClick={() => toggleFaq(i)}
-                  className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
-                >
-                  <span className={`font-semibold text-lg ${openFaq === i ? 'text-black' : 'text-navy'}`}>
-                    {faq.q}
-                  </span>
+              <div key={i} className={`border rounded-2xl transition-all duration-300 ${openFaq === i ? 'border-[#DEB22F] bg-[#DEB22F]/5 shadow-md' : 'border-gray-200 bg-white hover:border-gray-300'}`}>
+                <button onClick={() => toggleFaq(i)} className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+                  <span className={`font-semibold text-lg ${openFaq === i ? 'text-black' : 'text-navy'}`}>{faq.q}</span>
                   <div className={`p-2 rounded-full transition-colors ${openFaq === i ? 'bg-[#DEB22F] text-black' : 'bg-gray-100 text-gray-500'}`}>
                     <ChevronDown className={`h-5 w-5 transform transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} />
                   </div>
                 </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === i ? 'max-h-40 opacity-100 pb-5 px-6' : 'max-h-0 opacity-0 px-6'
-                    }`}
-                >
-                  <p className="text-gray-600 text-sm leading-relaxed border-t border-gray-200/60 pt-4">
-                    {faq.a}
-                  </p>
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === i ? 'max-h-40 opacity-100 pb-5 px-6' : 'max-h-0 opacity-0 px-6'}`}>
+                  <p className="text-gray-600 text-sm leading-relaxed border-t border-gray-200/60 pt-4">{faq.a}</p>
                 </div>
               </div>
             ))}
@@ -490,21 +416,12 @@ export default function Home() {
       {/* 7. CTA */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white pb-24">
         <div className="max-w-7xl mx-auto bg-[#151515] rounded-[2.5rem] relative overflow-hidden shadow-2xl border border-gray-800">
-
           <div className="relative z-10 px-8 py-20 md:py-24 text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-              Confused About Your Career Path?
-            </h2>
-            <p className="text-gray-400 mb-10 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Talk to our expert counsellors today and get a personalized roadmap for choosing the right course and securing your college admission.
-            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Confused About Your Career Path?</h2>
+            <p className="text-gray-400 mb-10 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Talk to our expert counsellors today and get a personalized roadmap for choosing the right course and securing your college admission.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-5">
-              <Link to="/contact" className="bg-[#DEB22F] hover:bg-[#c49b25] text-black px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:-translate-y-1">
-                Get Free Counselling
-              </Link>
-              <Link to="/contact" className="bg-[#DEB22F] hover:bg-[#c49b25] text-black px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:-translate-y-1">
-                Contact Us Now
-              </Link>
+              <Link to="/contact" className="bg-[#DEB22F] hover:bg-[#c49b25] text-black px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:-translate-y-1">Get Free Counselling</Link>
+              <Link to="/contact" className="bg-[#DEB22F] hover:bg-[#c49b25] text-black px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:-translate-y-1">Contact Us Now</Link>
             </div>
           </div>
         </div>
